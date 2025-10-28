@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--
 
 ██████╗░██╗██████╗░██╗░░██╗░█████╗░░██████╗
@@ -54,1048 +55,348 @@
 ...............................................................................................
 ...............................................................................................
 -->
+
 <html lang="en">
-
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title> Education Hop - Building leaders and strengthening our community</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <meta name="theme-color" content="#ffffff">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/site.webmanifest">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#ba3a3a">
-    <meta name="apple-mobile-web-app-title" content="Education Hop">
-    <meta name="application-name" content="Education Hop">
-    <meta name="msapplication-TileColor" content="#ffc40d">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="author" content="Bibhas Sharma">
-    <meta name="description" content="Education Hop makes students realize that everyone can be a leader by introducing them to the great act of volunteering. The Great Act of Volunteering." />
-    <meta name="keywords" content="Education Hop, volunteering, Bibhas Sharma, Vibhav Paleti, Volunteering opportunities, Independence High School, Teen Volunteer, Opportunities, Education Hop on Top">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education Hop — Building leaders, strengthening our community</title>
+  <meta name="description" content="Education Hop helps students discover leadership through the great act of volunteering." />
+  <meta name="theme-color" content="#0b0b0f" />
+
+  <!-- Favicon(s) still work if present in /images -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#ba3a3a">
+
+  <style>
+    /* -------------------- CSS RESET / BASE -------------------- */    *,*::before,*::after{box-sizing:border-box}    html{scroll-behavior:smooth}    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--text);background:radial-gradient(1200px 800px at 10% -10%, #1c1c28 0%, #0b0b0f 45%, #09090c 100%) fixed;overflow-x:hidden}    img{max-width:100%;display:block}    a{color:inherit;text-decoration:none}    :root{      --bg:#0b0b0f;      --card:#12121a;      --card-2:#171725;      --text:#f2f4f8;      --muted:#b8b9c2;      --brand:#e90002;      --brand-2:#ffc003;      --accent:#ffd166;      --danger:#ff6b6b;      --ring: 0 0 0 3px rgb(138 180 255 / .35);      --shadow: 0 10px 30px rgb(0 0 0 / .45);      --shadow-soft: 0 6px 18px rgb(0 0 0 / .28);      --radius: 18px;      --radius-sm: 12px;      --radius-lg: 28px;      --maxw: 1200px;    }    @media (prefers-color-scheme: light){      :root{        --bg:#f6f7fb; --card:#ffffff; --card-2:#f3f5fb; --text:#101114; --muted:#424655;        --brand:#166534; --brand-2:#0e7490; --accent:#9a3412; --danger:#b91c1c;        --ring: 0 0 0 3px rgb(30 64 175 / .25)      }      body{background:radial-gradient(1200px 800px at 10% -10%, #e8ecff 0%, #f6f7fb 55%, #ffffff 100%) fixed}    }    @media (prefers-reduced-motion: reduce){      *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}    }    /* -------------------- LAYOUT HELPERS -------------------- */    .container{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(16px,4vw,28px)}    .stack{display:grid;gap:clamp(14px,2.4vw,24px)}    .cluster{display:flex;gap:16px;align-items:center;flex-wrap:wrap}    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.85rem 1.25rem;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.28s box-shadow,.28s transform,.28s background-color,.28s border-color;cursor:pointer}    .btn:focus-visible{outline:none;box-shadow:var(--ring)}    .btn-primary{background:linear-gradient(135deg,var(--brand),#b2080a 60%);color:#0b140a}    .btn-primary:hover{transform:translateY(-1px)}    .btn-ghost{border-color:rgb(255 255 255 / .18);background:transparent;color:var(--text)}    .btn-ghost:hover{background:rgb(255 255 255 / .06)}    .eyebrow{letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--muted);font-size:.78rem}    /* -------------------- HEADER / NAV -------------------- */    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(10px);      background:linear-gradient(180deg, rgb(9 9 12 /.85), rgb(9 9 12 /.60));      border-bottom:1px solid rgb(255 255 255 / .06)}    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}    .brand{display:flex;gap:.75rem;align-items:center;font-weight:900;letter-spacing:.02em}    .brand-dot{width:.9rem;height:.9rem;border-radius:50%;background:conic-gradient(from 180deg,var(--brand),var(--brand-2))}    nav ul{display:flex;gap:10px;list-style-type: none;}    nav a{padding:.55rem .9rem;border-radius:999px;color:var(--muted);font-weight:600}    nav a:hover, nav a[aria-current="page"]{background:rgb(255 255 255 / .06);color:var(--text)}    .menu-toggle{display:none}    @media (max-width:900px){      nav ul{position:fixed;inset:64px 0 auto 0;background:rgb(9 9 12 / .96);backdrop-filter:blur(12px);border-bottom:1px solid rgb(255 255 255 / .06);        display:grid;gap:8px;padding:18px 16px;transform:translateY(-140%);transition:.3s}      nav ul.open{transform:translateY(0)}      .menu-toggle{display:inline-flex}      .desktop-only{display:none}    }    /* -------------------- HERO -------------------- */    .hero{padding-block:clamp(56px,10vw,120px)}    .hero-wrap{display:grid;gap:24px;grid-template-columns:1.1fr .9fr;align-items:center}    .hero h1{font-size:clamp(36px,5vw,64px);line-height:1.05;margin:0;font-weight:900;letter-spacing:-.02em}    .hero p{color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:56ch}    .hero-card{background:linear-gradient(180deg, rgb(255 255 255 / .06), rgb(255 255 255 / .03));border:1px solid rgb(255 255 255 / .10);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:22px}    .hero-logo{width:min(520px,90%);margin-inline:auto;border-radius:var(--radius);box-shadow:var(--shadow-soft)}    .hero-badges{display:flex;gap:10px;flex-wrap:wrap}    .badge{padding:.35rem .7rem;border-radius:999px;font-size:.8rem;border:1px solid rgb(255 255 255 / .14);background:rgb(255 255 255 / .05)}    @media (max-width:1000px){.hero-wrap{grid-template-columns:1fr;gap:32px}}    /* -------------------- SECTION GENERIC -------------------- */    section{padding-block:clamp(56px,9vw,96px)}    .section-head{display:grid;gap:10px;margin-bottom:18px}    .section-head h2{font-size:clamp(24px,3.3vw,40px);margin:0;letter-spacing:-.01em}    .lead{color:var(--muted)}/* -------------------- ABOUT -------------------- */.people-grid {  display: grid;  gap: 20px;  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));  align-items: start;}/* General person card */.person {  background: linear-gradient(180deg, rgb(255 255 255 / .07), rgb(255 255 255 / .04));  border: 1px solid rgb(255 255 255 / .08);  border-radius: var(--radius);  padding: 16px;  text-align: center;  box-shadow: var(--shadow-soft);  transition: transform .25s ease, box-shadow .25s ease;}.person:hover {  transform: translateY(-4px);  box-shadow: 0 6px 18px rgb(0 0 0 / .2);}.person img {  width: 100%;  aspect-ratio: 1 / 1;  object-fit: cover;  border-radius: 12px;  margin-bottom: 10px;}.person h3 {  margin: 0;  font-size: 1rem;  color: white;}.person p {  margin: .15rem 0 0;  color: var(--muted);  font-size: .9rem;}/* -------------------- FEATURED PERSON -------------------- */.person--featured {  grid-column: 1 / -1;  display: flex;  flex-direction: row;  align-items: center;  gap: 24px;  background: linear-gradient(135deg, #1a1a1d, #292933);  border: 1px solid rgb(255 255 255 / .15);  padding: 28px;  border-radius: 18px;  box-shadow: 0 0 25px rgb(0 0 0 / .3);}.person--featured img {  width: 250px;  height: 250px;  border-radius: 16px;  object-fit: cover;}.person--featured h3 {  font-size: 1.6rem;  color: #fff;  margin-bottom: 6px;}.person--featured p {  color: rgb(220 220 220 / .9);  line-height: 1.5;  font-size: 1rem;}/* Responsive tweaks */@media (max-width: 900px) {  .person--featured {    flex-direction: column;    text-align: center;  }  .person--featured img {    width: 180px;    height: 180px;  }  .person--featured h3 {    font-size: 1.4rem;  }}    /* -------------------- VOLUNTEER (GENERAL) -------------------- */    .cards{display:grid;gap:18px;grid-template-columns:repeat(5,1fr)}    .card{background:linear-gradient(180deg, rgb(255 255 255 / .06), rgb(255 255 255 / .03));border:1px solid rgb(255 255 255 / .10);      border-radius:var(--radius);padding:18px;display:grid;gap:10px;box-shadow:var(--shadow-soft);transition:transform .25s, box-shadow .25s}    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}    .card .icon{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand-2),#7ad2ff);border:1px solid rgb(255 255 255 / .14)}    .card h3{margin:.2rem 0 0;font-size:1.05rem}    .card p{color:var(--muted);font-size:.95rem}    @media (max-width:1200px){.cards{grid-template-columns:repeat(3,1fr)}}    @media (max-width:800px){.cards{grid-template-columns:repeat(2,1fr)}}    @media (max-width:560px){.cards{grid-template-columns:1fr}}    /* -------------------- SPECIFIC ORGS -------------------- */    .featured{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}    .tile{background:linear-gradient(180deg, rgb(255 255 255 / .04), rgb(255 255 255 / .02));border:1px solid rgb(255 255 255 / .10);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-soft);display:grid}    .tile img{width:100%;aspect-ratio:16/9;object-fit:cover}    .tile-body{padding:16px;display:grid;gap:8px}    .tile h3{margin:0}    .tile p{color:var(--muted);margin:0}    .tile .btn{margin-top:8px;align-self:start}    @media (max-width:1100px){.featured{grid-template-columns:repeat(2,1fr)}}    @media (max-width:720px){.featured{grid-template-columns:1fr}}    /* -------------------- UPCOMING -------------------- */    .panel{background:linear-gradient(180deg, rgb(255 255 255 / .06), rgb(255 255 255 / .03));border:1px solid rgb(255 255 255 / .10);      border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow)}    .countdown{font-variant-numeric:tabular-nums;display:inline-flex;gap:10px;padding:.5rem .75rem;border-radius:999px;background:rgb(0 0 0 / .25);border:1px solid rgb(255 255 255 / .12)}    .chip{padding:.25rem .6rem;border-radius:999px;background:rgb(255 209 102 / .15);border:1px solid rgb(255 209 102 / .25);color:#ffe7ad;font-size:.85rem}    /* -------------------- CONTACT -------------------- */    .contact-grid{display:grid;gap:18px;grid-template-columns:1fr .9fr}    .info-card{background:linear-gradient(180deg, rgb(255 255 255 / .06), rgb(255 255 255 / .03));border:1px solid rgb(255 255 255 / .10);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-soft)}    .info-row{display:grid;gap:8px}    .label{font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}    form{display:grid;gap:12px}    input,textarea{width:100%;padding:12px 14px;background:rgb(255 255 255 / .06);border:1px solid rgb(255 255 255 / .12);border-radius:12px;color:var(--text)}    input::placeholder, textarea::placeholder{color:rgb(255 255 255 / .58)}    input:focus-visible, textarea:focus-visible{outline:none;box-shadow:var(--ring)}    textarea{min-height:160px;resize:vertical}    @media (max-width:980px){.contact-grid{grid-template-columns:1fr}}    /* -------------------- FOOTER -------------------- */    footer{border-top:1px solid rgb(255 255 255 / .08);padding-block:28px;background:linear-gradient(180deg, rgb(9 9 12 / .75), rgb(9 9 12 / .92))}    .foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted)}    .foot small{opacity:.9}
+  </style>
 </head>
-<style>
-    * {
-        scroll-behavior: smooth;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Zen Maru Gothic', sans-serif;
-    }
-
-    section {
-        padding: 100px;
-    }
-
-.banner {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(#000000, #1a1a1a, #333333, #454545, #555555);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.banner .welcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 730px;
-}
-
-.banner h2 {
-    font-size: 4em; /* Larger font size for more impact */
-    font-weight: 600; /* Bolder weight for better readability */
-    line-height: 1.2em; /* Tighter line height for a neater appearance */
-    color: #fff;
-    animation: fadeIn 1s ease-in-out;
-    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.8); /* Text shadow for better contrast */
-}
-
-.banner h2 span {
-    font-size: 1.75em; /* Slightly larger for emphasis */
-    font-weight: 800; /* Extra bold for standout */
-}
-
-.banner h3 {
-    font-size: 2.2em; /* Slightly larger font size */
-    font-weight: 500;
-    margin-top: 20px; /* Reduced margin for tighter grouping */
-    max-width: 800px; /* Wider max width for better fit of longer text */
-    color: #fff;
-    text-align: center;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
-}
-
-
-    .button {
-        position: relative;
-        display: inline-block;
-        margin-top: 20px;
-        padding: 15px 35px;
-        text-decoration: none;
-        font-size: 1.25em;
-        font-weight: 900;
-        transition: all .6s ease;
-        color: #d50d08;
-        border: 3px solid white;
-        text-transform: uppercase;
-        text-align: center;
-        line-height: 1.05;
-        background-color: #fcc201;
-        outline: none;
-        border-radius: 10px;
-        filter: drop-shadow(0 0 0.65rem silver);
-        margin-top: 50px;
-    }
-
-    .button:hover {
-        background-color: #d50d08;
-        color: #fcc201;
-        border-color: black;
-        border-radius: 1em;
-        filter: drop-shadow(0 0 1.00rem #fcc201);
-    }
-
-    .sticky {
-        background: #ffffff;
-        padding: 20px 120px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 40px 100px;
-        z-index: 1000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: 0.8s;
-        font-size: 16px;
-    }
-
-    .logo {
-        color: #fff;
-        font-size: 21px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 2px;
-    }
-.about {
-    background: linear-gradient(#fff, #ededed);
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
-}
-
-
-    .heading {
-        margin-bottom: 50px;
-        text-align: center;
-    }
-
-    .headingw {
-        color: #fff;
-        margin-bottom: 50px;
-        text-align: center;
-    }
-
-    .sticky ul li a {
-        color: #d50d08;
-    }
-
-    .sticky .logo {
-        color: #d50d08;
-    }
-
-    header ul {
-        position: relative;
-        display: flex;
-    }
-
-    header ul li {
-        position: relative;
-        list-style: none;
-    }
-
-    header ul li a {
-        position: relative;
-        display: inline-block;
-        margin: 0 15px;
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .content {
-        flex-direction: column;
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-    }
-
-    .content h3 {
-        font-size: 24px;
-        font-weight: 600;
-        color: #c8c8c8;
-        margin-bottom: 20px;
-    }
-
-    .imgsp img {
-        width: 25%;
-        max-width: 100%;
-        border-radius: 15px;
-        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    }
-
-    img {
-        max-width: 100%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 70%;
-    }
-
-    .mainlogo {
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        align-items: center;
-    }
-
-.general {
-    background: #0a0a0a;
-}
-
-.general .content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 20px; 
-}
-
-.general .content .opportunity {
-    padding: 30px 25px; /* Adjust padding for better spacing */
-    background: linear-gradient(145deg, #333333, #1a1a1a); /* Gradient background for a more dynamic appearance */
-    color: #e2e2e2; /* Slightly lighter text for better readability */
-    max-width: 300px; /* Slightly narrower cards for a more uniform appearance */
-    margin: 15px; /* Smaller margins to fit more cards in view */
-    text-align: center;
-    transition: transform 0.5s, box-shadow 0.5s; /* Smooth transitions for hover effects */
-    border-radius: 10px; /* Rounded corners for a modern look */
-    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px; /* Subtle shadow for depth */
-}
-
-.general .content .opportunity:hover {
-    transform: translateY(-10px); /* Lift card on hover for interactive effect */
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 20px; /* Deeper shadow on hover for emphasis */
-}
-
-.general .content .opportunity img {
-    max-width: 100px; /* Larger image for better visibility */
-    margin-bottom: 20px; /* Space below the image */
-    filter: invert(0.9); /* Slightly less inversion for a touch of color */
-}
-
-.general .content .opportunity h2 {
-    font-size: 22px; /* Larger font size for headings */
-    font-weight: 700; /* Bolder text for emphasis */
-    margin-bottom: 10px; /* Space below heading */
-}
-
-
-    @keyframes blinks {
-        0% {
-            background: transparent;
-        }
-        30% {
-            background: rgba(252, 194, 1, 0.5);
-        }
-        60% {
-            background: #fcc201;
-        }
-        100% {
-            background: transparent;
-        }
-    }
-
-.boarders {
-    background: #e0dede;
-    padding: 50px 0;
-}
-
-.boarders .content {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: stretch; 
-    padding: 30px;
-    text-align: center;
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-direction: row;
-}
-
-.boarders .content .boarderBox {
-    width: calc(50% - 40px); 
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-}
-
-.boarders .content .boarderBox p {
-    font-size: 18px;
-    color: #333;
-}
-
-.boarders .content .boarderBox h2 {
-    font-size: 25px;
-    font-weight: bold;
-    color: #444;
-    margin-bottom: 10px;
-}
-
-.boarders .content .boarderBox img {
-    width: 70%;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-
-
-
-
-    .addy {
-        max-width: 185px;
-    }
-
-.contact {
-    background: #121212; /* Slightly lighter black for better depth */
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px; /* More pronounced shadow for a 3D effect */
-    padding: 40px; /* Added padding for better spacing */
-}
-
-.formBx {
-    min-width: 60%;
-    display: flex; /* Ensuring alignment */
-    flex-direction: column; /* Align form elements vertically */
-    align-items: center; /* Center align the items */
-    padding: 20px; /* Internal padding */
-}
-
-.formBx form {
-    width: 100%; /* Full width forms within the .formBx */
-}
-
-.formBx form h3 {
-    color: #ffffff;
-    font-size: 24px; /* Larger font for headings */
-    font-weight: 600; /* Bolder for emphasis */
-    margin-bottom: 20px; /* More space below headings */
-}
-
-.formBx form input,
-.formBx form textarea {
-    width: 100%; /* Full width input fields */
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #333333; /* Slightly lighter for contrast */
-    border: 1px solid #444; /* Subtle border */
-    color: #ffffff;
-    resize: none; /* Fixed size for textarea */
-}
-
-.formBx form textarea {
-    min-height: 150px; /* Adjusted for optimal text display */
-}
-
-.formBx form input::placeholder,
-.formBx form textarea::placeholder {
-    color: #bbb; /* Lighter color for placeholder text */
-}
-
-.formBx form input[type="submit"] {
-    width: auto;
-    background: linear-gradient(to bottom, #ff9d2f, #ff5722);
-    border: 2px solid #ff5722;
-    color: white;
-    font-size: 16px;
-    padding: 15px 25px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 1px;
-    transition: all 0.3s ease-in-out;
-}
-
-.contactInfo {
-    margin-top: 20px; /* Space above contact info */
-    color: #ccc; /* Lighter text color for contrast */
-}
-
-.contactInfoBx .box h3 {
-    font-size: 22px; /* Uniform sizing with form headings */
-    font-weight: 700; /* Heavier weight for importance */
-}
-
-.contactInfoBx .box p {
-    font-size: 16px; /* Larger font size for better readability */
-}
-
-.contactInfoBx .box {
-    padding: 15px; /* Padding for spacing */
-}
-
-.formBx form input[type="submit"] {
-    font-size: 17px; /* Standard font size for buttons */
-    display: block; /* Block display to fit width */
-    margin: 20px auto; /* Centering the button */
-}
-
-input, textarea {
-    width: 90%; /* Adjusted to not stretch too wide */
-    text-align: left; /* Normal text alignment */
-}
-
-
-    .countdowns {
-        font-size: 25px !important;
-        padding: 10px;
-    }
-
-    .copyright {
-        background: #181818;
-        text-align: center;
-        padding: 65px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-
-    .copyright p {
-        font-size: 20px;
-        color: #E6E9E0;
-        text-align: center;
-    }
-
-    .copyrightimg {
-        background: #181818;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-
-    .copyrightimg img {
-        max-width: 13%;
-        height: auto;
-        filter: drop-shadow(0 0 1.35rem #660066);
-    }
-
-    @media (max-width: 990px) {
-        header,
-        header.sticky {
-            padding: 20px 50px;
-            z-index: 1000;
-            align-items: center;
-        }
-
-        .menu {
-            position: fixed;
-            top: 75px;
-            right: -100%;
-            display:block;
-            padding: 100px 50px;
-            text-align: center;
-            width: 100%;
-            height: 100vh;
-            background: #ededed;
-            transition: 0.5s;
-            z-index: 999;
-            border-top: 1px solid rgba(0, 0, 0, 0.2);
-        }
-
-        .menu.active {
-            right: 0;
-        }
-
-        header ul li a {
-            color: #111;
-            font-size: 24px;
-            margin: 10px;
-        }
-
-        .toggle {
-            transition: 0.75s;
-            width: 40px;
-            height: 40px;
-            background: url(images/menu.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 30px;
-            cursor: pointer;
-        }
-
-        .toggle.active {
-            transition: 0.75s;
-            background: url(images/close.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 25px;
-            cursor: pointer;
-        }
-
-        header.sticky .toggle {
-            filter: invert(1);
-        }
-
-        section {
-            padding: 100px 50px;
-        }
-
-        .logo {
-            font-size: 15px;
-        }
-
-        .banner {
-            padding: 150px 50px 100px;
-        }
-
-        .banner h2 {
-            font-size: 1.45em;
-        }
-
-        .banner h3 {
-            font-size: 1em;
-        }
-
-        .button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 15px;
-        }
-
-        .heading h2 {
-            font-size: 25px;
-        }
-
-        .contextBx h3 {
-            font-size: 20px;
-        }
-
-        .content {
-            flex-direction: column;
-        }
-
-        .imgsp {
-            margin-bottom: 20px;
-        }
-
-        .general .content .opportunity {
-            margin: 10px;
-        }
-
-        .boarders .content .boarderBox img {
-            width: 95%;
-        }
-
-        .contactInfo {
-            margin: 20px 0;
-        }
-
-        .contactInfoBx .box p {
-            font-size: 13px;
-            text-align: center;
-        }
-
-        .contactInfoBx .box h3 {
-            font-size: 20px;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .formBx form h3,
-        .contactInfo h3 {
-            text-align: center;
-        }
-
-        .contactInfoBx .box {
-            position: relative;
-            height: 75px;
-        }
-
-        .contactInfoBx .box .text {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .formBx form input[type="submit"] {
-            margin-top: 10px;
-            font-size: 17px;
-            align-content: center;
-            text-align: center;
-            margin: 0 auto;
-        }
-
-        .moreinfo .returns {
-            height: 415px;
-        }
-
-        .copyrightimg img {
-            max-width: 25%;
-        }
-
-        .boarders .content {
-            letter-spacing: 0.4px;
-            line-height: 1.21;
-        }
-    }
-
-    @media (max-width: 600px) {
-        header,
-        header.sticky {
-            padding: 20px 20px;
-        }
-
-        .banner {
-            padding: 150px 20px 100px;
-        }
-
-        section {
-            padding: 100px 20px;
-        }
-
-        .moreinfo .returns {
-            height: 450px;
-        }
-
-        .moreinfo .returns p {
-            font-size: 16px;
-        }
-
-        .moreinfo .beneifits p,
-        li {
-            font-size: 16px;
-        }
-
-        .banner h3 {
-            font-size: 1.45em;
-        }
-
-        .banner .welcome {
-            height: 525px;
-        }
-
-        .banner h3 {
-            max-width: 435px;
-        }
-    }
-
-    @media (max-width: 500px) {
-        .moreinfo .returns {
-            height: 580px;
-        }
-
-        .moreinfo .beneifits {
-            height: 270px;
-        }
-
-        .boarders .content .boarderBox h2 {
-            font-size: 13px;
-        }
-
-        .boarders .content .boarderBox p {
-            font-size: 14px;
-        }
-
-        .boarders .content .boarderBox {
-            padding: 45px 5px;
-        }
-
-        .copyright p {
-            font-size: 15px;
-        }
-    }
-
-    @media (max-width: 400px) {
-        .moreinfo .beneifits {
-            height: 200px;
-        }
-
-        .moreinfo .returns {
-            height: 490px;
-        }
-
-        .moreinfo .returns p {
-            font-size: 14px;
-        }
-
-        .moreinfo .beneifits p,
-        li {
-            font-size: 14px;
-        }
-    }
-
-    @media (max-width: 355px) {
-        .moreinfo .beneifits {
-            height: 250px;
-        }
-
-        .moreinfo .returns {
-            height: 595px;
-        }
-    }
-
-    @media (max-width: 335px) {
-        .moreinfo .beneifits {
-            height: 265px;
-        }
-
-        .moreinfo .returns {
-            height: 670px;
-        }
-
-        .moreinfo .beneifits h1 {
-            font-size: 20px;
-        }
-
-        .moreinfo .returns h1 {
-            font-size: 17px;
-        }
-
-        .contactInfoBx .box p {
-            font-size: 11px;
-        }
-
-        .contactInfoBx .box .text h3 {
-            font-size: 16px;
-        }
-    }
-
-    html {
-        overflow-x: hidden;
-    }
-
-    .introp {
-        display: inline-block;
-        word-wrap: break-word;
-        max-width: 600px;
-        overflow: hidden;
-        align-items: center;
-        padding: 15px;
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .contactP {
-        display: inline-block;
-        word-wrap: break-word;
-        max-width: 680px;
-        width: 100%;
-        align-items: center;
-        padding: 5px;
-    }
-</style>
-
-
 <body>
-    <header class="">
-        <a href="#home" class="logo">Education Hop</a>
-        <div class="toggle" onclick="toggleMenu();"></div>
-        <ul class="menu">
-            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
-            <li><a href="#about" onclick="toggleMenu();">About</a></li>
-            <li><a href="#general" onclick="toggleMenu();">General</a></li>
-            <li><a href="#specific" onclick="toggleMenu();">Specific</a></li>
-            <li><a href="#upcoming" onclick="toggleMenu();">Upcoming</a></li>
-            <!--            <li><a href="#past" onclick="toggleMenu();">Past</a></li>-->
-            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Education Hop</span>
+      </a>
+      <button class="btn btn-ghost menu-toggle" aria-expanded="false" aria-controls="navlist">Menu</button>
+      <nav>
+        <ul id="navlist" class="desktop-only">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#general">General</a></li>
+          <li><a href="#specific">Specific</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-    </header>
-    <section class="banner" id="home">
-        <div class="welcome">
-            <h2>Education Hop</h2>
-            <main class="mainlogo"><img src="images/EducationHop%20Logo.avif" alt="Education Hop Logo"></main>
-            <h3>Education Hop makes students realize that everyone can be a leader by introducing them to the great act of volunteering</h3><br>
-            <a href="#about" class="button"> About Us </a>
-        </div>
-    </section>
-    <section class="about" id="about">
-    <div class="heading">
-        <h2>About Us</h2>
+      </nav>
     </div>
-    <div class="content">
-        <div class="boarderBox">
-            <img src="images/Sreekar%20Jarajapu.png" alt="Image Of Sreekar Jarajapu" class="founders">
-            <h2>Sreekar Jarajapu</h2>
-            <h4>President of Education Hop</h4> <br><br><br><br><br><br>
-        </div>
+  </header>
 
-        <div class="boarderBox">
-            <img src="images/Anvi%20Siddabhattuni.png" alt="Image Of Anvi Siddabhattuni" class="founders">
-            <h2>Anvi Siddabhattuni</h2>
-            <h4>Vice President of Education Hop</h4> <br><br><br><br><br><br>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-wrap">
+      <div class="stack">
+        <span class="eyebrow">The great act of volunteering</span>
+        <h1>Helping students become leaders—by serving their community.</h1>
+        <p>Education Hop connects teens with real, local opportunities to contribute, grow skills, and build purpose—at libraries, shelters, food banks, cultural centers, and more.</p>
+        <div class="cluster">
+          <a class="btn btn-primary" href="#about">About Us</a>
+          <a class="btn btn-ghost" href="#general">Explore Opportunities</a>
         </div>
-
-        <div class="boarderBox">
-            <img src="images/Abhi%20Reddy.png" alt="Image Of Abhi Reddy" class="founders">
-            <h2>Abhi Reddy</h2>
-            <h4>Secretary of Education Hop</h4> <br><br><br><br><br><br>
+        <div class="hero-badges">
+          <span class="badge">Student-led</span>
+          <span class="badge">Resume-ready experience</span>
+          <span class="badge">Community impact</span>
         </div>
-
-        <div class="boarderBox">
-            <img src="images/Narein%20Vignesh.png" alt="Image Of Narein Vignesh" class="founders">
-            <h2>Narein Vignesh</h2>
-            <h4>Event Coordinator of Education Hop</h4> <br><br><br><br><br><br>
-        </div>
-
-        <div class="boarderBox">
-            <img src="images/Saad%20M.png" alt="Image Of Saad Muhammad" class="founders">
-            <h2>Saad Muhammad</h2>
-            <h4>Treasurer of Education Hop</h4> <br><br><br><br><br><br>
-        </div> 
+      </div>
+      <div class="hero-card">
+        <img class="hero-logo" src="images/EducationHop%20Logo.avif" alt="Education Hop logo">
+      </div>
     </div>
+  </section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">About us</span>
+      <h2>Student leadership in action</h2>
+      <p class="lead">Meet the organizers building Education Hop and guiding students toward meaningful service.</p>
+    </div>
+
+    <div class="people-grid">
+      <article class="person person--featured">
+        <img src="images/Ayush-Kandel.jpg" alt="Ayush Kandel">
+        <h3>Ayush Kandel</h3>
+        <p><strong>President</strong></p>
+        <p>My name is Ayush Kandel, and I attend Allen High School. I Plan to major in Finance and pursue a career that incorporates leadership, collaboration, and service. In the Leo Club, a membership based service organization, I helped organize community events and fund-raising events. What I learned from it is how beneficial volunteering is, to helping others and in helping gain essential skills. Education Hop enabled me to continue serving while inspiring other students to serve and lead by example.</p>
+      </article>
+
+      <article class="person">
+        <img src="images/Sreekar%20Jarajapu.png" alt="Sreekar Jarajapu">
+        <h3>Sreekar Jarajapu</h3>
+        <p>Student Leader</p>
+      </article>
+      <article class="person">
+        <img src="images/Anvi%20Siddabhattuni.png" alt="Anvi Siddabhattuni">
+        <h3>Anvi Siddabhattuni</h3>
+        <p>Vice President</p>
+      </article>
+      <article class="person">
+        <img src="images/Abhi%20Reddy.png" alt="Abhi Reddy">
+        <h3>Abhi Reddy</h3>
+        <p>Secretary</p>
+      </article>
+      <article class="person">
+        <img src="images/Narein%20Vignesh.png" alt="Narein Vignesh">
+        <h3>Narein Vignesh</h3>
+        <p>Event Coordinator</p>
+      </article>
+      <article class="person">
+        <img src="images/Saad%20M.png" alt="Saad Muhammad">
+        <h3>Saad Muhammad</h3>
+        <p>Treasurer</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-    <section class="general" id="general">
-        <div class="headingw">
-            <h2>Volunteer Opportunities</h2>
-            <p>
-                Here are some volunteer opprunities students can do.
-            </p>
-        </div>
-        <div class="content">
-            <div class="opportunity" data-aos="flip-up">
-                <img src="images/libraryicon.png" alt="Public Libraries">
-                <h2>Teen Volunteer for Public Libraries</h2>
-                <p>Volunteering at a library is easy to get into, and the tasks are simple to do. At the library, the student can help in many ways, such as stocking the shelves with books, helping to prepare events, cleaning up the space, helping borrowers, and much more. This is a perfect opportunity for students who prefer working in a calm place, and perhaps finding a new buddy. Volunteering at the library can show that you are involved in your community and have a strong personal identity.</p>
-            </div>
-            <div class="opportunity" data-aos="flip-up" alt="Pet Shelter">
-                <img src="images/peticon.png">
-                <h2>Volunteer at the Pet Shelter</h2><br>
-                <p>Volunteering at a shelter may be a dream for pet lovers. The volunteer will undergo extensive training to help inside the shelter, organize special events, and assist mass adoption days. Volunteering here can help in future Veterinarian efforts.</p>
-            </div>
-            <div class="opportunity" data-aos="flip-up" alt="Food Banks">
-                <img src="images/cannedfoodicon.png">
-                <h2>Volunteer at Food Banks</h2><br>
-                <p>Food Banks are one of the easiest and highest rewarding places to volunteer at. At the foodbank, the volunteer packs food items in hot or cold locations. Food banks are fun and highly interactive places so you can find new friends. Food banks give work experience and can add value to a resume in applying for a job. This can help people who have less work experience.</p>
-            </div>
-            <div class="opportunity" data-aos="flip-up" alt="Arts Centers">
-                <img src="images/artsicon.png">
-                <h2>Teen Ambassador for Arts Centers</h2>
-                <p>Art centers provide a plethora of activities for a student to do. The student can help professional art instructors and train students. Ambassadors can also give tours, make videos for the art centers, and more. Either way, being an ambassador for an art center will make the student go through diligent tasks. The student can gain valuable experience that can be put on resumes for jobs and colleges</p>
-            </div>
-            <div class="opportunity" data-aos="flip-up" alt="Religious Organizations">
-                <img src="images/religionicon.png">
-                <h2>Volunteer for local Churches and Religious Organizations</h2>
-                <p>Volunteering at religious centers can make the volunteer feel a strong sense of peace. To spread kindness, he or she will distribute food, make sure the place is clean, and provide other services to the visitors.</p>
-            </div>
-        </div>
-    </section>
-    <section class="boarders" id="specific">
-        <div class="heading">
-            <h2>Specific</h2>
-            <p>
-                Narrow down volunteer opportunities.
-            </p>
-        </div>
-        <div class="content">
-            <div class="boarderBox" data-aos="fade-right">
-                <img src="images/DAS.avif" loading="" alt="Dallas Animal Services">
-                <h2>Dallas Animal Services</h2><br>
-                <p>Dallas Animal Services operates an animal shelter where individuals can engage in meaningful volunteer work caring for animals. The process to start volunteering is straightforward and accessible.</p><br><br>
-                <a class="button" href="https://www.bedallas90.org/home/volunteer/" target="_blank">Dallas Animal Services Website</a><br>
-            </div>
-            <div class="boarderBox" data-aos="fade-left">
-                <img src="images/NTFB.avif" loading="" alt="North Texas Food Bank">
-                <h2>North Texas Food Bank</h2><br>
-                <p>NTFB is one of the biggest and most popular food bank in the Texas Area. Opportunities will take some time to show up, however.</p><br><br>
-                <a class="button" target="_blank" href="https://ntfb.org/get-involved/">North Texas Food Bank Website</a><br>
-            </div>
-            <div class="boarderBox" data-aos="fade-right">
-                <img class="OKclass" src="images/OK.jpg" alt="Operation Kindness">
-                <h2>Operation Kindness</h2><br>
-                <p>Operation Kindness is a leading animal welfare organization in Texas, providing veterinary care, companionship, and homes for animals in need. It operates a lifesaving shelter in Carrollton, TX.</p><br><br>
-                <a class="button" target="_blank" href="https://www.operationkindness.org/volunteer/">Operation Kindness Website</a><br>
-            </div>
-            <div class="boarderBox" data-aos="fade-left">
-                <img src="images/HFB.avif" alt="Houston Food Bank">
-                <h2>Houston Food Bank</h2><br>
-                <p>Houston Foodbank is the biggest food bank in the Houston area. Here the volunteer will pack food into containers.</p><br><br>
-                <a class="button" target="_blank" href="https://www.houstonfoodbank.org/ways-to-give/">Houston Food Bank Website</a><br>
-            </div>
-            <div class="boarderBox" data-aos="fade-right">
-                <img src="images/FA.svg" alt="Feeding America">
-                <h2>Feeding America</h2><br>
-                <p>Feeding America is a U.S.-based nonprofit with a network of over 200 food banks, providing meals to more than 46 million people through various community agencies such as food pantries, soup kitchens, and shelters.</p><br><br>
-                <a class="button" target="_blank" href="https://www.feedingamerica.org/take-action/volunteer">Feeding America Website</a><br>
-            </div>
-            <div class="boarderBox" data-aos="fade-left">
-                <img src="images/TSA.avif" alt="The Salvation Army">
-                <h2>The Salvation Army</h2><br>
-                <p>The Salvation Army helps the homeless and people in need. The volunteer will have to work with these people and cater to their needs.</p><br><br>
-                <a class="button" target="_blank" href="https://www.salvationarmyusa.org/usn/ways-to-give/">The Salvation Army Website</a><br>
-            </div>
-            <div class="boarderBox" data-aos="slide-up">
-                <img src="images/DAHfH.avif" alt="Habitat for Humanity">
-                <h2>Habitat for Humanity</h2><br>
-                <p>The Habitat for Humanity provides affordable home items to raise money for people in need. Volunteers will need to help customers and manage the store.</p><br><br>
-                <a class="button" target="_blank" href="https://www.habitat.org/volunteer">Habitat for Humanity Website</a><br>
-            </div>
-        </div>
-    </section>
-    <div class="solid"></div>
-    <section class="boarders" id="upcoming">
-        <div class="heading" data-aos="fade">
-            <h2>Upcoming</h2>
-            <p>
-                Here are some upcoming volunteering event that Education Hop will be hosing.
-            </p>
-        </div>
-        <div class="content">
-            <!--
-            <div class="boarderBox" data-aos="fade-up" alt="Spooky Halloween">
-                <img src="images/halloween.avif">
-                <h2>Donate Halloween candy to children hospital</h2><br>
-                <p>On Monday, October 31, 2022, Education Hop plans to collect candy during Halloween to donate it to those who didn't participate due to sickness. If you are interested in participating, please contact us!</p><br><br>
-                <p id="countdown" class="countdowns"></p>
-            </div>
--->
-            <div class="boarderBox" data-aos="fade-up" alt="">
-                <img src="images/EducationHopPosterforCodingWEB.avif" alt="Poster for Education Hop">
-                <h2>Help volunteer students about coding HTML and CSS!</h2><br>
-                <p>The Education Hop is a volunteer event that may be a wonderful opportunity for high school students to share and understand their knowledge and skills in the STEM program. The event's main objective is to teach participants website building techniques, especially HTML and CSS, both of which are critical abilities in the current digital world. The nonprofit HSBuilds, which strives to create excellent websites for businesses and start-ups, is the event's sponsor. By supporting this event, HSBuilds is encouraging the next generation of web developers and equipping kids with the skills they need to become leaders in the innovation industry. Students can develop as people, learn new skills, and give back to their community by volunteering, which is a great opportunity.</p><br><br>
-                <a class="button" href="#contact">Sign Up!</a><br><br>
-                <p id="countdown" class="countdowns"></p>
-            </div>
-        </div>
-    </section>
-    <div class="solid"></div>
-    <!--
-        <section class="boarders" id="past">
-        <div class="heading" data-aos="fade">
-            <h2>Past</h2>
-            <p>
-                Here were some past volunteering event that Education Hop hosted.
-            </p>
-        </div>
-        <div class="content">
-            <div class="boarderBox" data-aos="fade-up" alt="">
-                <img src="images/" alt="Poster for ">
-                <h2>!</h2><br>
-                <p></p><br><br>
-                <p id="countdown" class="countdowns"></p>
-            </div>
-        </div>
-    </section>
--->
-    <section class="contact" id="contact">
-        <div class="headingw">
-            <h2>Contact Us!</h2>
-            <p>"Building leaders and strengthening our community"</p>
-            <br>
-            <p class="contactP">To learn more about Education Hop and how to get involved, please feel free to fill out the form on our website or contact us directly. We will be happy to answer any questions and provide further information about our organization and its activities.</p>
 
-        </div>
-        <div class="content">
-            <div class="contactInfo">
-                <h3>Contact Info</h3>
-                <div class="contactInfoBx">
-                    <div class="box">
-                        <div class="text">
-                            <h3>Phone Number</h3>
-                            <p>(214) 491-2623</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="text">
-                            <h3>Email</h3>
-                            <p>educationhop1@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="formBx">
-                <form action="https://formspree.io/f/mlevgzbj" method="POST">
-                    <h3>Message Us</h3>
-                    <input type="text" name="name" id="full-name" placeholder="Full Name">
-                    <input type="email" name="email" placeholder="Email">
-                    <textarea name="message" maxlength="700" required placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send">
-                </form>
-            </div>
-        </div>
-    </section>
-    <!--<div class="copyright">
-        <p>Copyright © 2022, educationhop.org</p>
-    </div>-->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
+  <!-- General Opportunities -->
+  <section id="general">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Volunteer</span>
+        <h2>Opportunities you can start right away</h2>
+        <p class="lead">Simple ways to get involved, develop skills, and make an impact.</p>
+      </div>
 
-    </script>
-    <script type="text/javascript">
-        window.addEventListener('scroll', function() {
-            var header = document.querySelector('header')
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
+      <div class="cards">
+        <article class="card">
+          <div class="icon"><img src="images/libraryicon.png" alt="" width="40" height="40"></div>
+          <h3>Teen Volunteer — Public Libraries</h3>
+          <p>Stock shelves, prep events, help patrons, and contribute in a calm environment perfect for focus and learning.</p>
+        </article>
 
-        function toggleMenu() {
-            var menuToggle = document.querySelector('.toggle');
-            var menu = document.querySelector('.menu');
-            menuToggle.classList.toggle('active');
-            menu.classList.toggle('active');
+        <article class="card">
+          <div class="icon"><img src="images/peticon.png" alt="" width="40" height="40"></div>
+          <h3>Animal Shelters</h3>
+          <p>Train, support adoption events, and assist staff while gaining experience that helps future veterinary pursuits.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><img src="images/cannedfoodicon.png" alt="" width="40" height="40"></div>
+          <h3>Food Banks</h3>
+          <p>High-impact service: sort and pack donations, collaborate with teams, and build resume-ready experience.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><img src="images/artsicon.png" alt="" width="40" height="40"></div>
+          <h3>Arts Centers</h3>
+          <p>Support instructors, lead tours, capture content, and get hands-on with community arts programming.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><img src="images/religionicon.png" alt="" width="40" height="40"></div>
+          <h3>Religious Organizations</h3>
+          <p>Distribute meals, maintain welcoming spaces, and serve visitors with dignity and care.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specific Organizations -->
+  <section id="specific">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Get specific</span>
+        <h2>Featured organizations</h2>
+        <p class="lead">Start with a mission that resonates—then jump in.</p>
+      </div>
+
+      <div class="featured">
+        <article class="tile">
+          <img src="images/DAS.avif" alt="Dallas Animal Services">
+          <div class="tile-body">
+            <h3>Dallas Animal Services</h3>
+            <p>Hands-on animal care and community support—start with an approachable onboarding path.</p>
+            <a class="btn btn-primary" target="_blank" href="https://www.bedallas90.org/home/volunteer/">Visit DAS</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="images/NTFB.avif" alt="North Texas Food Bank">
+          <div class="tile-body">
+            <h3>North Texas Food Bank</h3>
+            <p>One of the largest in Texas—meaningful shifts that fuel regional impact.</p>
+            <a class="btn btn-primary" target="_blank" href="https://ntfb.org/get-involved/">Visit NTFB</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="images/OK.jpg" alt="Operation Kindness">
+          <div class="tile-body">
+            <h3>Operation Kindness</h3>
+            <p>Veterinary care and lifesaving shelter operations in Carrollton, TX.</p>
+            <a class="btn btn-primary" target="_blank" href="https://www.operationkindness.org/volunteer/">Visit Operation Kindness</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="images/HFB.avif" alt="Houston Food Bank">
+          <div class="tile-body">
+            <h3>Houston Food Bank</h3>
+            <p>Support the largest food bank in the Houston area with essential logistics and packing.</p>
+            <a class="btn btn-primary" target="_blank" href="https://www.houstonfoodbank.org/ways-to-give/">Visit HFB</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="images/FA.svg" alt="Feeding America">
+          <div class="tile-body">
+            <h3>Feeding America</h3>
+            <p>A nationwide network serving millions—find opportunities in your area.</p>
+            <a class="btn btn-primary" target="_blank" href="https://www.feedingamerica.org/take-action/volunteer">Visit Feeding America</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="images/TSA.avif" alt="The Salvation Army">
+          <div class="tile-body">
+            <h3>The Salvation Army</h3>
+            <p>Serve neighbors facing hardship across many programs and roles.</p>
+            <a class="btn btn-primary" target="_blank" href="https://www.salvationarmyusa.org/usn/ways-to-give/">Visit TSA</a>
+          </div>
+        </article>
+
+        <article class="tile">
+          <img src="images/DAHfH.avif" alt="Habitat for Humanity">
+          <div class="tile-body">
+            <h3>Habitat for Humanity</h3>
+            <p>Help run ReStore locations and support affordable housing in your community.</p>
+            <a class="btn btn-primary" target="_blank" href="https://www.habitat.org/volunteer">Visit Habitat</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming -->
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Contact</span>
+        <h2>Get in touch</h2>
+        <p class="lead">Questions about getting involved? We’re happy to help.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="info-card stack">
+          <div class="info-row">
+            <span class="label">Phone</span>
+            <strong>(214) 491-2623</strong>
+          </div>
+          <div class="info-row">
+            <span class="label">Email</span>
+            <strong>educationhop1@gmail.com</strong>
+          </div>
+          <p class="lead">“Building leaders and strengthening our community.”</p>
+        </div>
+
+        <div class="info-card">
+          <form action="https://formspree.io/f/mlevgzbj" method="POST">
+            <input type="text" name="name" placeholder="Full name" aria-label="Full name" />
+            <input type="email" name="email" placeholder="Email" aria-label="Email" />
+            <textarea name="message" maxlength="700" required placeholder="Your message" aria-label="Your message"></textarea>
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <small>© <span id="y"></span> Education Hop</small>
+      <div class="cluster" role="group" aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#general">Volunteer</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navList = document.getElementById('navlist');
+    const desktopOnly = document.querySelector('nav ul.desktop-only');
+    const isSmall = () => matchMedia('(max-width:900px)').matches;
+      
+
+// run once on load and whenever the hash changes
+setActiveByHashOrTop();
+addEventListener('hashchange', setActiveByHashOrTop);
+
+
+    function setMode(){
+      if(isSmall()){
+        navList.classList.add('open'); // default visible for accessibility
+        desktopOnly?.classList.remove('desktop-only');
+        navList.classList.remove('open');
+      }else{
+        // ensure desktop layout
+        navList.classList.add('desktop-only');
+        navList.classList.remove('open');
+      }
+    }
+    setMode();
+    addEventListener('resize', setMode);
+
+    toggleBtn.addEventListener('click', () => {
+      const open = navList.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Countdown (set to a reasonable future date if desired)
+    const target = new Date('2026-02-28T17:00:00').getTime();
+    const countdownEl = document.getElementById('countdown');
+    const fmt = n => String(n).padStart(2,'0');
+    function tick(){
+      const now = Date.now();
+      const d = Math.max(0, target - now);
+      const days = Math.floor(d / (1000*60*60*24));
+      const hours = Math.floor((d % (1000*60*60*24)) / (1000*60*60));
+      const minutes = Math.floor((d % (1000*60*60)) / (1000*60));
+      const seconds = Math.floor((d % (1000*60)) / 1000);
+      countdownEl.textContent = `${fmt(days)}d ${fmt(hours)}h ${fmt(minutes)}m ${fmt(seconds)}s`;
+      if(d <= 0){ countdownEl.textContent = 'Started!'; clearInterval(t); }
+    }
+    const t = setInterval(tick, 1000); tick();
+
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mark current section as active in nav on scroll
+    const links = [...document.querySelectorAll('header nav a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const id = '#'+e.target.id;
+        const link = links.find(a => a.getAttribute('href') === id);
+        if(link){
+          if(e.isIntersecting){ links.forEach(l=>l.removeAttribute('aria-current')); link.setAttribute('aria-current','page'); }
         }
-
-    </script>
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("Feb 28, 2023 17:00:00").getTime();
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +
-                minutes + "m " + seconds + "s ";
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "Started!";
-            }
-        }, 1000);
-
-    </script>
+      });
+    }, {rootMargin: '-50% 0px -45% 0px', threshold: 0});
+    sections.forEach(s => obs.observe(s));
+  </script>
 </body>
-
 </html>
